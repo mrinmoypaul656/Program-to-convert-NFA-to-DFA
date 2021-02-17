@@ -1,0 +1,23 @@
+AIM:
+To write a program to convert the NFA to DFA.
+Code:
+while 1:
+    st=input("Enter the Regular expression: ")
+    if(len(st)=='0'):
+        break
+    if(len(st)==1):
+        print("NFA-0 "+ st+" 1")
+        print("DFA-0 "+ st+" 1")
+    if(len(st)==2):
+        if(st[1]=='*'):
+            print("NFA-0 e 1 " + st[0]+ " 2 e 3 0 e 3 2 e 1")
+            print("DFA-1 "+ st[0]+" 2")
+        else:
+            print("NFA-0 "+ st[0]+"1 "+ st[1]+”2”)
+            print("DFA-0 "+ st[0]+"1 "+ st[1]+”2”)
+    if(len(st)==3):
+        print("NFA-0 e 1 "+st[0]+"2 e 5 0 e 3 "+ st[2]+"4 e 5")
+        print("DFA- 1 " + st[0]+" 2 3 "+st[2]+" 4")
+    print("enter Q to exit")
+    if input() == "Q":
+        break
